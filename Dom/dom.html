@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p class="content">我是你爸爸</p>
+<li class="li">没什么</li>
+<div class="box"></div>
+<div id="div"></div>
+</body>
+<script>
+  var content = document.querySelector('.content')
+  console.log(content.nodeName)
+  console.log(content.nodeType)
+  console.log(content.nodeValue)
+  var li = document.querySelector('.li')
+  console.log(li.nodeName)
+  console.log(li.nodeType)
+  console.log(li.nodeValue)
+  var box = document.querySelector('.box')
+  console.log(box.nodeName)
+  console.log(box.nodeType)
+  console.log(box.nodeValue)
+  var div = document.getElementById('div')
+  console.log(div);
+</script>
+</html>

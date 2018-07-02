@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  var RegExp = /^[0-9a-zA-z{0-9}]$/
+
+  var str = '123'
+
+  var result =RegExp.test(str)
+  console.log(result)
+
+  var r2 = str.match(/1/)
+  console.log(r2)
+
+  var str2 = 'this is string'
+
+  var str3 = str2.replace(/string/,'STR')
+  console.log(str3)
+  console.log(str2)
+
+  var str4 = str2.search(/string/,'STR')
+  console.log(str4)
+
+  var str5= str2.toUpperCase()
+  console.log(str5)
+</script>
+</html>

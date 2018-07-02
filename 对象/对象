@@ -1,0 +1,23 @@
+//创建对象
+var obj = {}
+new Object()
+Object.create(obj)
+
+
+//循环对象的属性和方法
+第一种  for  in
+第二种 Object.getOwnPropertyNames(obj)
+第三种 Object.keys()
+
+//删除对象属性
+delete obj.name
+
+
+//对象分类
+内置对象/原⽣对象
+就是 JavaScript 语⾔预定义的对象。在 ECMAScript 标准定义，由 JavaScript 解释器/引擎提供具体实现。
+宿主对象
+指的是 JavaScript 运⾏环境提供的对象。⼀般是由浏览器⼚商提供实现（⽬前也有独⽴的 JavaScript 解释
+器/引擎提供实现），主要分为 BOM 和 DOM。
+⾃定义对象
+就是由开发⼈员⾃主创建的对象。

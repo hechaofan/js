@@ -1,0 +1,18 @@
+//todo concat concat方法也可以用于将对象合并为数组。
+   var arra = [].concat({a:1},{a:2})
+
+//todo join 将数组以什么方式变为字符窜
+var ar4 = ar3.join(' ')
+
+//todo toString() 数组会返回一个字符窜
+  console.log( typeof arr.toString())
+
+//todo slice方法用于提取原数组的一部分，返回一个新数组，原数组不变。
+//它的第一个参数为起始位置（从0开始），第二个参数为终止位置（但该位置的元素本身不包括在内）。如果省略第二个参数，则一直返回到原数组的最后一个成员。
+//todo slice方法的一个重要应用，是将类似数组的对象转为真正的数组。
+
+  Array.prototype.slice.call({ 0: 'a', 1: 'b', length: 2 })
+
+//todo splice
+
+//

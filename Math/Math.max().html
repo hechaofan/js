@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Math.max()</title>
+</head>
+<body>
+
+</body>
+<script>
+  //todo 第一种 Math.max()
+  Math.max(1, 2, 3) //3
+
+  //todo 第二种  三点运算符
+  var arr = [1,2,3]
+  Math.max(...arr) //3
+
+  //todo 第三种 创建getMaxOfArray()方法
+  function getMaxOfArray(arr) {
+    return Math.max.apply(null,arr)
+  }
+  getMaxOfArray(arr) //3
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+ function Hero () {
+   this.name = 'zhangwuji';
+   this.age = 18
+ }
+ Hero.prototype.name = 'xiaozhao'
+  var hero = new Hero()
+ //todo 自身属性和原型链重名 自身属性更高
+ /*console.log(hero.name)*/
+  delete hero.name
+
+ //todo  删除属性先删自身属性
+ console.log(hero.name)
+</script>
+</html>

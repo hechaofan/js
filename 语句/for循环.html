@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  //打印1-100的和
+  var num = 0;
+  for (var i = 0; i < 101; i++) {
+    num += i
+
+  }
+  console.log(num)
+
+  //打印1-100的偶数和
+  var odd = 0;//奇数和
+  var eve = 0; //o偶数和
+  for (var i = 0; i <101; i++) {
+    if(i%2 == 1){
+      odd += i
+    }else{
+      eve += i
+    }
+
+  }
+  console.log(odd)
+  console.log(eve)
+
+  //1,1,2,3,5,8 数列
+  var num1 = 1;
+  var num2 = 1 ;
+  var t = 0;
+  for (var i = 3; i < 6; i++) {
+    t = num2
+    num2 = num2+num1
+    num1 = t
+
+  }
+  console.log(num2)
+
+  for (var j = 0; j < 4; j++) {
+    for (var i = 0; i < 4; i++) {
+      document.write('☆')
+
+    }
+    document.write('<br>')
+
+  }
+
+  //三角形  todo 外循环控制行，内循环控制列
+  for (var j = 0; j < 4; j++) {
+    for (var i = 0; i < j; i++) {
+      document.write('☆')
+
+    }
+    document.write('<br>')
+
+  }
+
+  //九九乘法表
+  for (var j = 0; j < 10; j++) {
+    for (var i = 1; i  <= j; i++) {
+      document.write(i+"*" + j+"=" +i*j + '  ')
+
+    }
+    document.write('<br>')
+
+  }
+</script>
+</html>

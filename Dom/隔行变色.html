@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    *{
+      padding: 0px;
+      margin: 0px;
+    }
+    .list{
+      list-style: none;
+    }
+    .red{
+      background-color: red;
+    }
+    li{
+      width: 100%;
+      height: 20px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+<ul class="list">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+</ul>
+</body>
+<script>
+  var lis = document.querySelectorAll('li')
+  for (var i = 0; i < lis.length; i++) {
+    if(i%2 === 0){
+      lis[i].style.backgroundColor = 'blue';
+    }
+
+  }
+  var list = document.querySelector('.list');
+  var li = document.createElement('li')
+  list.appendChild(li)
+  var arrt = document.createAttribute('class')
+  arrt.nodeValue= 'red'
+  li.setAttributeNode(arrt)
+  var text =document.createTextNode('text') ;
+  text.nodeValue = '我是你爸爸'
+  li.appendChild(text)
+</script>
+</html>

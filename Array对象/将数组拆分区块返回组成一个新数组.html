@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  /*//todo size是将arr切割成几个数组
+  var arr = [1,2,3,4,5,6]
+  function chunk(arr,size) {
+    var arr1 = Object.assign([],arr)
+    var result = new Array(size)
+    var num = Math.ceil(arr1.length/size)
+    for (var i = 0; i < size; i++) {
+      result[i] = arr1.splice(0,num)
+
+    }
+    return result
+  }
+  console.log(chunk(arr, 3));
+  console.log(arr);*/
+
+  //todo 第二种将数组按照size的个数切开，比如三个三个的切
+  var arr= [1,2,3,4,5,6]
+  function chunk(arr,size) {
+    var arr1 = Object.assign([],arr)
+    var num = Math.ceil(arr1.length/size)
+    var result= new Array(num)
+    for (var i = 0; i < num; i++) {
+      result[i] = arr1.splice(0,size)
+    }
+    return result
+  }
+  console.log(chunk(arr, 4));
+  console.log(arr)
+
+  var names = "Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ";
+  var re = /\s*;\s*/;
+  var nameList = names.split(re);
+  console.log(nameList);
+
+  var myString = "Hello World. How are you doing?";
+  var splits = myString.split(" ");
+
+  console.log(splits);
+</script>
+</html>

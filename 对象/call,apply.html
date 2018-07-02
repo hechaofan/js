@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  function Hero (name,age) {
+    this.name = name;
+    this.age = age
+  };
+
+  function Person (name,age) {
+    Hero.apply(this,[name,age])
+  }
+  var person = new Person('zhangwuji',18)
+  console.log(person.age)
+  console.log(person.name)
+</script>
+</html>

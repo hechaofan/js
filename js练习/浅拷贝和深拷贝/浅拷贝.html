@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>浅拷贝</title>
+</head>
+<body>
+
+</body>
+<script>
+  //引用数据的赋值是赋值对象的引用地址
+  var a = {name:'张无忌',age:18}
+  var b= a //{name: "张无忌", age: 18}
+  console.log(b);
+  b.name= '周芷若'
+  console.log(a); //{name: "周芷若", age: 18}
+
+
+  //todo 第一种浅拷贝  Object.assign()只可以赋值第一层属性
+  var obj= {name:'何超凡',sex:'男'}
+  var obj1=Object.assign({},obj)
+  obj1.name='超凡'
+  console.log(obj); //{name: "何超凡", sex: "男"}
+  var Arr = [{a:1},{b:1}]
+  var Arr1 = Object.assign([],Arr)
+  Arr1[0].a = 2
+  console.log(Arr); //[{a:2},{b:1}]
+  Arr1[0]={c:1}
+  console.log(Arr1); //[{c:1},{b:1}]
+  console.log(Arr); //[{a:2},{b:1}]
+
+  //todo 第二种写一个方法shallowCopy
+  function shallowCopy(obj1,obj2) {
+    if(Array.isArray(obj1)) {
+      for (var i = 0; i < obj1.length; i++) {
+        obj2[i] = obj1[i];
+
+      }
+    }else {
+      for (var key in obj1) {
+        if(obj.hasOwnProperty(key)){
+          obj2[key] = obj1[key]
+        }
+      }
+    }
+  }
+  var Obj = {name:'123'}
+  var Obj1={}
+  shallowCopy(Obj,Obj1)
+  console.log(Obj1);// {name: "123"}
+  var arr=[1,2,3]
+  var arr1=[]
+  shallowCopy(arr,arr1)
+  console.log(arr1);
+</script>
+</html>

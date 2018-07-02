@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>forEach,map,filter,reduce</title>
+</head>
+<body>
+
+</body>
+<script>
+  //todo   forEach
+  var arr = [1,2,3,4,5]
+  arr.forEach((item,index,a) => {
+     console.log(index + '-' + item + '|' +(a === arr))
+  })
+  //todo  map
+  var arr1= arr.map(item => {
+    return item*item
+  })
+  console.log(arr1);
+
+  var kvArray = [{key: 1, value: 10}, {key: 2, value: 20}, {key: 3, value: 30}];
+  var newKvArray = kvArray.map(item => {
+    var newobj = {}
+    newobj[item.key] = item.value
+    return newobj
+  })
+  console.log(newKvArray);
+
+
+  //todo filter
+  //删选复合要求的数字
+  function BigTenNum(ele) {
+    return ele >= 10
+  }
+  var numArr = [2,8,12,15,17]
+  var NumArr = numArr.filter(BigTenNum)
+  console.log(NumArr);
+
+  console.log(numArr.filter(item => {
+    return item > 10
+  }));
+
+  //过滤json数据 得到id是不为0的数字的对象
+  console.log('//////');
+  var jsonArr = [
+    { id: 15 },
+    { id: -1 },
+    { id: 0 },
+    { id: 3 },
+    { id: 12.2 },
+    { },
+    { id: null },
+    { id: NaN },
+    { id: 'undefined' }
+  ];
+  function isNum(obj) {
+    return  obj !== undefined && typeof obj === "number" && !isNaN(obj)
+  }
+  var trueIndex = 0
+  var falseIndex = 0
+  function idArr(item) {
+    if(isNum(item.id) && item.id !==0){
+      trueIndex++
+        return true
+    }
+    falseIndex++
+    return false
+  }
+  console.log(trueIndex,jsonArr.filter(idArr),falseIndex);
+  //Searching in array
+  var fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+  var searchStr = (query) => {
+    return fruits.filter((el) => {
+      return el.toLowerCase().indexOf(query.toLowerCase()) > -1
+    })
+  }
+  searchStr('o') // ["mango", "orange"]
+
+
+  //todo reduce
+  //数组求和
+  var reduceArr = [1,2,3,4,5]
+  reduceArr.reduce((prev, curr) => {
+    return prev + curr
+  })
+  //将二维数组转化为一维数组
+  var flattened = [[0, 1], [2, 3], [4, 5]]
+  var newFlattened = flattened.reduce((prev,curr) => {
+    return prev.concat(curr)
+  })
+  console.log(newFlattened);
+  //计算名字出现次数
+  var nameArr=['xiaoming','hong','xiaoming']
+  var namesObj=nameArr.reduce((names,name) => {
+    if(name in names) {
+      names[name]++
+    }else {
+      names[name] = 1
+    }
+    return names
+  },{})
+  console.log(namesObj);
+
+  var friends = [{
+    name: 'Anna',
+    books: ['Bible', 'Harry Potter'],
+    age: 21
+  }, {
+    name: 'Bob',
+    books: ['War and peace', 'Romeo and Juliet'],
+    age: 26
+  }, {
+    name: 'Alice',
+    books: ['The Lord of the Rings', 'The Shining'],
+    age: 18
+  }];
+  console.log(friends.reduce((prev, curr) => {
+    return [...prev, ...curr.books]
+  }, []));
+  //prev.concat(curr.books)
+</script>
+</html>

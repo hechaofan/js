@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  var obj = {
+    name: 'zhangwuji',
+    age : 18,
+    'sayme' : function () {
+        console.log(123)
+    }
+  }
+  console.log(obj.name)
+  obj.sayme()
+
+
+  //todo 构造函数创建对象
+  function Hero() {
+      this.name = 'xiaoming';
+      this.sayMe = function () {
+        console.log(123);
+      }
+  };
+  var hero = new Hero()
+  console.log(hero.name)
+  console.log(hero.sayMe())
+
+  //todo new Object()
+  var obj2 = new Object();
+  obj2.name = 'zhangwuj'
+  obj2.sayname = function () {
+    return 1
+  }
+  console.log(obj2.sayname())
+
+  //todo Object.create()
+  var obj2 = Object.create(obj)
+  console.log(obj2.name)
+
+  obj['sayme']()
+//循环对象的属性和方法
+
+  /* todo 第一种  for  in
+  for (var a in obj) {
+    console.log(a)
+    console.log(obj[a])
+  }*/
+  // todo 第二种 Object.getOwnPropertyNames(obj)
+  var arr = Object.getOwnPropertyNames(obj)
+
+  // todo  第三种 Object.keys()
+  var arr1 = Object.keys(obj)
+  console.log(arr)
+  console.log(obj[arr[0]])
+
+  delete obj.name
+  var arr2 = Object.keys(obj)
+  console.log(arr2)
+</script>
+</html>

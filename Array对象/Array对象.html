@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  //todo 1 数组最好这样创建
+  var arr = [1, 2];
+  // todo bad  是因为Array作为构造函数，行为很不一致。因此，不建议使用它生成新数组
+  var arr2 = new Array(1, 2);
+
+  //todo 2 Array.isArray()检查数组
+  console.log(Array.isArray(arr))
+
+
+  //todo 3toString() 数组会返回一个字符窜
+  console.log( typeof arr.toString())
+
+  //todo 4push pop unshift shift
+  var arr1 =[1,2]
+  arr1.push('a');
+  console.log(arr1)
+
+  //todo pop方法用于删除数组的最后一个元素，并返回该元素。注意，该方法会改变原数组。
+  var arr2 = [1,2,3,4]
+  console.log(arr2.pop())
+  console.log(arr2)
+
+  //todo join
+  var ar3 = [3,2,1]
+  var ar4 = ar3.join(' ')
+  console.log(ar4)
+  console.log(typeof ar4)
+
+  //todo concat concat方法也可以用于将对象合并为数组。
+  console.log(ar3.concat(ar4))
+
+  var arra = [].concat({a:1},{a:2})
+  console.log(arra)
+
+  //todo reverse()
+  console.log(ar3.reverse())
+
+  //todo slice()
+  var Arr = [1,2,3,4,5,6]
+  console.log(Arr.slice(0, 4))
+
+  //slice方法的一个重要应用，是将类似数组的对象转为真正的数组。
+
+  var w =Array.prototype.slice.call({ 0: 'a', 1: 'b', length: 2 })
+  console.log(w)
+  // ['a', 'b']
+
+  //上面代码的参数都不是数组，但是通过call方法，在它们上面调用slice方法，就可以把它们转为真正的数组。
+
+  //todo splice
+  console.log(Arr)
+  console.log(Arr.splice(2, 1))
+  console.log(Arr)
+
+  // todo sort
+  var arr6 = [111,1011,1111]
+  console.log(arr6.sort())
+  console.log(arr6.sort(function (a,b) {
+    return b-a
+  }))
+  var arr4 = [{name:12},{name:13},{name:14}]
+  console.log(arr4.sort(function (o1, o2) {
+    return o1.name - o2.name
+  }))
+
+  //todo map
+    var arr7 =[1,2,4]
+  arr7.map(function (n) {
+    return n + 1
+  }) // 2,3,4
+
+  var arr5 =[1,2,3,4]
+  console.log( arr5.map(function (elem,index,arr) {
+    return elem * index
+  }) )// 2,3,4
+
+</script>
+</html>

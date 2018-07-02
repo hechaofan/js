@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>正则表达式的规则</title>
+</head>
+<body>
+
+</body>
+<script>
+  var str = 'string123';
+
+  // TODO 匹配所有数字
+  var reg1 = /0123456789/;
+  // TODO 匹配所有字母 - 具有大小写 - 简单罗列麻烦
+  var reg2 = /abcdefg/;
+  // TODO 匹配数字或字母 - 简写方式
+  var reg3 = /[0-9a-zA-Z]/;
+
+  // TODO [^...] - 反向字符集 - 一般不用
+  var reg4 = /[^0-4]/;// TODO 5-9
+
+  /*
+   TODO \w - [A-Za-z0-9_]
+   TODO \s - 空格、制表符、换页符和换行符
+   TODO \d - [0-9]
+   */
+
+  /*
+   TODO 重复
+   TODO {n,m} - 匹配字符至少出现 n 次，最多出现 m 次
+   TODO ? - 出现 0 或 1 次 - 相当于 {0,1}
+   TODO + - 出现 1 或 多次 - 相当于 {1,}
+   TODO * - 出现 0 或 多次
+   */
+  var reg5 = /[0-9]{1,10}/;
+
+  /*
+   TODO 匹配位置
+   TODO ^ - 匹配输入的开始
+   TODO $ - 匹配输入的结束
+   */
+  var reg5 = /^[0-9]{1,10}$/;
+
+</script>
+</html>

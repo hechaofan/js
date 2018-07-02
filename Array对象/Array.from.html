@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  //todo  Array from a String
+  console.log(Array.from('string'));
+
+  //todo Array from a Set
+  let set = new Set([1,2,3,3,4,4])
+  console.log(Array.from(set));
+
+  //todo Array from an Array-like object (arguments)
+  function f() {
+    return Array.from(arguments)
+  }
+  console.log(f(1, 2, 3));
+
+  //数组去重合并
+  function combine() {
+    var arr= Array.from(arguments).reduce((prev,curr) => {
+      return prev.concat(curr)
+    })
+    return   [...new Set(arr)]
+  }
+  console.log(combine([1], [2,2,3],[2,3,4,5]));
+</script>
+</html>

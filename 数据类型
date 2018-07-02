@@ -1,0 +1,52 @@
+JavaScript 的数据类型，共有六种
+基本数据类型 number string boolean null underfined
+引用数据类型 对象（object）：各种值组成的集合  可分为三种 狭义的对象（object）数组（array）函数（function）
+
+typeof
+typeof 123 // "number"
+typeof '123' // "string"
+typeof false // "boolean"
+function f() {}
+typeof f
+// "function"
+
+typeof undefined
+// "undefined"
+
+todo 利用这一点，typeof可以用来检查一个没有声明的变量，而不报错。
+v
+// ReferenceError: v is not defined
+typeof v
+// "undefined"
+
+todo 实际编程中，这个特点通常用在判断语句
+// 错误的写法
+if (v) {
+  // ...
+}
+// ReferenceError: v is not defined
+// 正确的写法
+if (typeof v === "undefined") {
+  // ...
+}
+
+typeof window // "object"
+typeof {} // "object"
+typeof [] // "object"
+todo instanceof 区分
+var o = {};
+var a = [];
+
+o instanceof Array // false
+a instanceof Array // true
+
+todo `typeof null // "object"
+
+
+* 非布尔值自动转换成布尔值时
+       * 自动转换成 false
+         * 空字符串
+         * 0 和 NaN
+         * undefined
+         * null
+         *false
